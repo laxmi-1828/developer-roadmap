@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beginner Developer Roadmap · Code With Laxmi</title>
+<meta name="description" content="A free, step-by-step roadmap for beginner developers — HTML, CSS, JavaScript, Git, SQL, backend, APIs, React, Laravel, security, projects, portfolio and interview prep.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12181A;
+    --bg:#F6F7F5;
+    --surface:#FFFFFF;
+    --line:#DDE3DE;
+    --teal:#0F6B5C;
+    --teal-dark:#0B4F44;
+    --amber:#D98E1F;
+    --muted:#5C6663;
+    --done-bg:#EEF6F1;
+    --radius:10px;
+    --shadow:0 1px 2px rgba(18,24,26,0.06);
+    --maxw:1100px;
+    font-size:16px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:112px;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0;
+  }
+  a{color:var(--teal-dark);}
+  img{max-width:100%;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,247,245,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    display:flex; align-items:center; gap:14px;
+    padding:12px 20px;
+    max-width:var(--maxw); margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); flex:0 0 auto;}
+  .brand-mark{
+    width:34px; height:34px; border-radius:8px;
+    background:linear-gradient(155deg,var(--teal),var(--teal-dark));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-family:'Fraunces',serif; font-weight:700; font-size:17px;
+  }
+  .brand-name{font-family:'Fraunces',serif; font-weight:600; font-size:16px; white-space:nowrap;}
+  .brand-name span{color:var(--teal);}
+
+  .progress-wrap{flex:1 1 auto; min-width:80px;}
+  .progress-label{display:flex; justify-content:space-between; font-size:11px; color:var(--muted); margin-bottom:4px;}
+  .progress-track{height:6px; border-radius:99px; background:var(--line); overflow:hidden;}
+  .progress-fill{height:100%; width:0%; background:linear-gradient(90deg,var(--teal),var(--amber)); border-radius:99px; transition:width .4s ease;}
+
+  .reset-btn{
+    flex:0 0 auto; border:1px solid var(--line); background:var(--surface);
+    color:var(--muted); font-size:12px; padding:7px 10px; border-radius:8px;
+    cursor:pointer; font-family:inherit;
+  }
+  .reset-btn:hover{border-color:var(--teal); color:var(--teal-dark);}
+
+  .subnav{
+    border-bottom:1px solid var(--line);
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .subnav::-webkit-scrollbar{display:none;}
+  .subnav-inner{
+    display:flex; gap:6px; padding:10px 20px;
+    max-width:var(--maxw); margin:0 auto; width:max-content; min-width:100%;
+  }
+  .subnav a{
+    flex:0 0 auto; text-decoration:none; color:var(--muted);
+    font-size:13px; font-weight:500; padding:6px 12px;
+    border-radius:99px; border:1px solid transparent; white-space:nowrap;
+  }
+  .subnav a:hover{background:var(--surface); border-color:var(--line); color:var(--ink);}
+  .subnav a.active{background:var(--teal); color:#fff;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:44px 0 28px;}
+  .kicker{font-size:13px; font-weight:600; color:var(--teal-dark); margin-bottom:10px;}
+  .hero h1{font-size:clamp(28px,6vw,42px); max-width:14ch;}
+  .hero p{max-width:56ch; color:var(--muted); font-size:16px; margin-top:14px;}
+
+  .search-box{
+    margin-top:22px;
+    display:flex; align-items:center; gap:10px;
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:11px 14px; max-width:480px;
+  }
+  .search-box svg{flex:0 0 auto; color:var(--muted);}
+  .search-box input{
+    border:none; outline:none; background:transparent; width:100%;
+    font-family:inherit; font-size:15px; color:var(--ink);
+  }
+  .search-hint{font-size:12px; color:var(--muted); margin-top:8px;}
+  #noResults{display:none; color:var(--muted); font-size:14px; padding:30px 0; text-align:center;}
+
+  /* ---------- Sections ---------- */
+  section.topic-section{padding:34px 0 6px; scroll-margin-top:112px;}
+  .section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:16px; border-bottom:1px solid var(--line); padding-bottom:12px;}
+  .section-num{font-family:'Fraunces',serif; font-size:14px; color:var(--amber); font-weight:600;}
+  .section-head h2{font-size:22px;}
+  .section-desc{color:var(--muted); font-size:14px; margin:-8px 0 18px;}
+
+  .card-grid{display:grid; grid-template-columns:1fr; gap:14px; margin-bottom:8px;}
+  @media(min-width:680px){ .card-grid{grid-template-columns:1fr 1fr;} }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-left:3px solid var(--teal);
+    border-radius:var(--radius);
+    padding:16px 16px 14px;
+    box-shadow:var(--shadow);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .card.done{border-left-color:var(--amber); background:var(--done-bg);}
+  .card-top{display:flex; align-items:flex-start; justify-content:space-between; gap:10px;}
+  .card h3{font-size:16px; font-weight:600; font-family:'Inter',sans-serif;}
+  .check{
+    flex:0 0 auto; width:22px; height:22px; border-radius:6px;
+    border:1.5px solid var(--line); background:var(--surface);
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:13px;
+  }
+  .check.checked{background:var(--teal); border-color:var(--teal);}
+  .card p.card-desc{color:var(--muted); font-size:13.5px; margin:8px 0 14px;}
+  .btn-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .btn{
+    text-decoration:none; font-size:12.5px; font-weight:600;
+    padding:7px 11px; border-radius:7px; border:1px solid var(--line);
+    color:var(--ink); background:var(--bg);
+  }
+  .btn:hover{border-color:var(--teal); color:var(--teal-dark);}
+  .btn.primary{background:var(--teal); color:#fff; border-color:var(--teal);}
+  .btn.primary:hover{background:var(--teal-dark); border-color:var(--teal-dark); color:#fff;}
+
+  /* ---------- Checklist ---------- */
+  .checklist-summary{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; margin:20px 0 40px;
+  }
+  .checklist-summary h2{font-size:20px; margin-bottom:6px;}
+  .checklist-summary p{color:var(--muted); font-size:14px; margin:0 0 16px;}
+  .big-progress{display:flex; align-items:center; gap:16px; margin-bottom:18px;}
+  .big-num{font-family:'Fraunces',serif; font-size:34px; font-weight:600; color:var(--teal-dark);}
+  .big-track{flex:1; height:10px; background:var(--line); border-radius:99px; overflow:hidden;}
+  .big-fill{height:100%; width:0%; background:linear-gradient(90deg,var(--teal),var(--amber)); border-radius:99px; transition:width .4s ease;}
+  .group-list{display:grid; gap:6px; grid-template-columns:1fr; font-size:13.5px;}
+  @media(min-width:600px){ .group-list{grid-template-columns:1fr 1fr;} }
+  .group-row{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed var(--line); color:var(--muted);}
+  .group-row b{color:var(--ink);}
+
+  footer{border-top:1px solid var(--line); padding:26px 0 40px; color:var(--muted); font-size:13px; text-align:center;}
+  footer strong{color:var(--ink);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">L</span>
+      <span class="brand-name">Code With <span>Laxmi</span></span>
+    </a>
+    <div class="progress-wrap">
+      <div class="progress-label"><span>Your progress</span><span id="topPercent">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="topFill"></div></div>
+    </div>
+    <button class="reset-btn" id="resetBtn" type="button">Reset</button>
+  </div>
+  <nav class="subnav" aria-label="Roadmap sections">
+    <div class="subnav-inner" id="subnavInner">
+      <a href="#html">HTML</a>
+      <a href="#css">CSS</a>
+      <a href="#javascript">JavaScript</a>
+      <a href="#git">Git/GitHub</a>
+      <a href="#sql">SQL</a>
+      <a href="#backend">Backend</a>
+      <a href="#apis">APIs</a>
+      <a href="#react">React</a>
+      <a href="#laravel">Laravel</a>
+      <a href="#security">Security</a>
+      <a href="#projects">Projects</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#interview">Interview Prep</a>
+      <a href="#checklist">Checklist</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <div class="kicker">Code With Laxmi · Free Roadmap</div>
+    <h1>Your beginner developer roadmap</h1>
+    <p>A clear, step-by-step path from zero to job-ready — one topic at a time. Every topic links to a place to learn it, a place to practice it, and the official documentation. Tick things off as you go; your progress is saved on this device.</p>
+    <div class="search-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search topics — e.g. flexbox, hooks, joins…" aria-label="Search topics">
+    </div>
+    <div class="search-hint">Searching filters every section below in real time.</div>
+  </section>
+
+  <div id="noResults">No topics match your search. Try a different keyword.</div>
+
+  <!-- 1. HTML -->
+  <section class="topic-section" id="html" data-section-name="HTML">
+    <div class="section-head"><span class="section-num">01</span><h2>HTML</h2></div>
+    <p class="section-desc">The structure and content of every web page. Start here.</p>
+    <div class="card-grid">
+      <article class="card" data-id="html-basics" data-keywords="html tags elements structure semantic">
+        <div class="card-top"><h3>Semantic HTML</h3><button class="check" aria-label="Mark Semantic HTML complete"></button></div>
+        <p class="card-desc">Tags, document structure, and writing HTML that describes meaning, not just layout.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://html.spec.whatwg.org/multipage/" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="html-forms" data-keywords="html forms inputs validation">
+        <div class="card-top"><h3>Forms &amp; Inputs</h3><button class="check" aria-label="Mark Forms and Inputs complete"></button></div>
+        <p class="card-desc">Collecting user input — text fields, buttons, labels and basic validation.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/#basic-html-and-html5" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://html.spec.whatwg.org/multipage/forms.html" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 2. CSS -->
+  <section class="topic-section" id="css" data-section-name="CSS">
+    <div class="section-head"><span class="section-num">02</span><h2>CSS</h2></div>
+    <p class="section-desc">Styling, layout and making pages look good on every screen.</p>
+    <div class="card-grid">
+      <article class="card" data-id="css-fundamentals" data-keywords="css selectors box model colors fonts">
+        <div class="card-top"><h3>CSS Fundamentals</h3><button class="check" aria-label="Mark CSS Fundamentals complete"></button></div>
+        <p class="card-desc">Selectors, the box model, colors, typography and cascading rules.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/#basic-css" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://www.w3.org/Style/CSS/" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="css-layout" data-keywords="css flexbox grid layout">
+        <div class="card-top"><h3>Flexbox &amp; Grid</h3><button class="check" aria-label="Mark Flexbox and Grid complete"></button></div>
+        <p class="card-desc">Modern layout systems for arranging content in one or two dimensions.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://flexboxfroggy.com/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="css-responsive" data-keywords="css responsive design media queries mobile">
+        <div class="card-top"><h3>Responsive Design</h3><button class="check" aria-label="Mark Responsive Design complete"></button></div>
+        <p class="card-desc">Media queries and mobile-first techniques so pages work on any device.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://web.dev/learn/design" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://cssgridgarden.com/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. JavaScript -->
+  <section class="topic-section" id="javascript" data-section-name="JavaScript">
+    <div class="section-head"><span class="section-num">03</span><h2>JavaScript</h2></div>
+    <p class="section-desc">The language that makes pages interactive.</p>
+    <div class="card-grid">
+      <article class="card" data-id="js-fundamentals" data-keywords="javascript variables functions loops logic">
+        <div class="card-top"><h3>JS Fundamentals</h3><button class="check" aria-label="Mark JS Fundamentals complete"></button></div>
+        <p class="card-desc">Variables, data types, functions, loops and conditionals.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://javascript.info/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="js-dom" data-keywords="javascript dom events manipulation">
+        <div class="card-top"><h3>DOM Manipulation</h3><button class="check" aria-label="Mark DOM Manipulation complete"></button></div>
+        <p class="card-desc">Selecting elements, handling events and updating the page dynamically.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://javascript.info/document" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://developer.mozilla.org/en-US/docs/Web/API/Document" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="js-async" data-keywords="javascript es6 async await promises fetch">
+        <div class="card-top"><h3>ES6+ &amp; Async JavaScript</h3><button class="check" aria-label="Mark ES6 and Async JavaScript complete"></button></div>
+        <p class="card-desc">Arrow functions, destructuring, promises and async/await.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://javascript.info/async" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://262.ecma-international.org/" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. Git -->
+  <section class="topic-section" id="git" data-section-name="Git/GitHub">
+    <div class="section-head"><span class="section-num">04</span><h2>Git &amp; GitHub</h2></div>
+    <p class="section-desc">Version control — track changes and collaborate with other developers.</p>
+    <div class="card-grid">
+      <article class="card" data-id="git-basics" data-keywords="git commit branch merge version control">
+        <div class="card-top"><h3>Git Basics</h3><button class="check" aria-label="Mark Git Basics complete"></button></div>
+        <p class="card-desc">Commits, branches, merging and resolving conflicts.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://git-scm.com/doc" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://learngitbranching.js.org/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://git-scm.com/docs" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="github-workflow" data-keywords="github pull request issues collaboration">
+        <div class="card-top"><h3>GitHub Workflow</h3><button class="check" aria-label="Mark GitHub Workflow complete"></button></div>
+        <p class="card-desc">Repositories, pull requests, issues and collaborating with a team.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://skills.github.com/" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://skills.github.com/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://docs.github.com/" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5. SQL -->
+  <section class="topic-section" id="sql" data-section-name="SQL">
+    <div class="section-head"><span class="section-num">05</span><h2>SQL &amp; Databases</h2></div>
+    <p class="section-desc">Storing and querying data reliably.</p>
+    <div class="card-grid">
+      <article class="card" data-id="sql-fundamentals" data-keywords="sql select joins queries database">
+        <div class="card-top"><h3>SQL Fundamentals</h3><button class="check" aria-label="Mark SQL Fundamentals complete"></button></div>
+        <p class="card-desc">SELECT, WHERE, JOINs, and aggregate queries.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://www.postgresql.org/docs/current/tutorial.html" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://sqlbolt.com/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://www.postgresql.org/docs/" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="db-design" data-keywords="database schema design normalization relationships">
+        <div class="card-top"><h3>Database Design</h3><button class="check" aria-label="Mark Database Design complete"></button></div>
+        <p class="card-desc">Tables, relationships, keys and basic normalization.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://www.postgresql.org/docs/current/ddl.html" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://dev.mysql.com/doc/mysql-tutorial-excerpt/8.0/en/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://dev.mysql.com/doc/" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 6. Backend -->
+  <section class="topic-section" id="backend" data-section-name="Backend">
+    <div class="section-head"><span class="section-num">06</span><h2>Backend Development</h2></div>
+    <p class="section-desc">Servers, routing and the logic behind every app.</p>
+    <div class="card-grid">
+      <article class="card" data-id="nodejs" data-keywords="node.js javascript server runtime">
+        <div class="card-top"><h3>Node.js</h3><button class="check" aria-label="Mark Node.js complete"></button></div>
+        <p class="card-desc">Running JavaScript outside the browser to build servers and tools.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://nodejs.org/en/learn/getting-started/introduction-to-nodejs" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://nodejs.org/en/learn/getting-started/how-to-write-and-run-your-first-nodejs-program" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://nodejs.org/api/" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="express" data-keywords="express routing middleware server side">
+        <div class="card-top"><h3>Express &amp; Routing</h3><button class="check" aria-label="Mark Express and Routing complete"></button></div>
+        <p class="card-desc">Building routes, middleware and a basic server-side app.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://expressjs.com/en/starter/installing.html" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://expressjs.com/en/starter/hello-world.html" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://expressjs.com/en/4x/api.html" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 7. APIs -->
+  <section class="topic-section" id="apis" data-section-name="APIs">
+    <div class="section-head"><span class="section-num">07</span><h2>APIs</h2></div>
+    <p class="section-desc">How apps talk to each other over the web.</p>
+    <div class="card-grid">
+      <article class="card" data-id="rest-concepts" data-keywords="rest api http methods status codes">
+        <div class="card-top"><h3>REST API Concepts</h3><button class="check" aria-label="Mark REST API Concepts complete"></button></div>
+        <p class="card-desc">HTTP methods, status codes and how REST APIs are structured.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://jsonplaceholder.typicode.com/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://www.rfc-editor.org/rfc/rfc9110" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="consuming-apis" data-keywords="fetch api json requests">
+        <div class="card-top"><h3>Consuming APIs</h3><button class="check" aria-label="Mark Consuming APIs complete"></button></div>
+        <p class="card-desc">Using fetch to request, read and display data from an API.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://jsonplaceholder.typicode.com/guide/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 8. React -->
+  <section class="topic-section" id="react" data-section-name="React">
+    <div class="section-head"><span class="section-num">08</span><h2>React</h2></div>
+    <p class="section-desc">A popular library for building interactive user interfaces.</p>
+    <div class="card-grid">
+      <article class="card" data-id="react-fundamentals" data-keywords="react components jsx props">
+        <div class="card-top"><h3>React Fundamentals</h3><button class="check" aria-label="Mark React Fundamentals complete"></button></div>
+        <p class="card-desc">Components, JSX and passing data with props.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://react.dev/learn" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://react.dev/learn/tutorial-tic-tac-toe" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://react.dev/reference/react" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="react-hooks" data-keywords="react hooks usestate useeffect state">
+        <div class="card-top"><h3>Hooks &amp; State</h3><button class="check" aria-label="Mark Hooks and State complete"></button></div>
+        <p class="card-desc">Managing state and side effects with useState and useEffect.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://react.dev/learn/state-a-components-memory" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://react.dev/learn/tutorial-tic-tac-toe" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://react.dev/reference/react/hooks" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 9. Laravel -->
+  <section class="topic-section" id="laravel" data-section-name="Laravel">
+    <div class="section-head"><span class="section-num">09</span><h2>Laravel</h2></div>
+    <p class="section-desc">A PHP framework for building backend applications quickly.</p>
+    <div class="card-grid">
+      <article class="card" data-id="laravel-basics" data-keywords="laravel php framework installation">
+        <div class="card-top"><h3>Laravel Basics</h3><button class="check" aria-label="Mark Laravel Basics complete"></button></div>
+        <p class="card-desc">Installation, project structure and the request lifecycle.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://laravel.com/docs/installation" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://bootcamp.laravel.com/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://laravel.com/docs" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="laravel-eloquent" data-keywords="laravel routing eloquent orm database">
+        <div class="card-top"><h3>Routing &amp; Eloquent</h3><button class="check" aria-label="Mark Routing and Eloquent complete"></button></div>
+        <p class="card-desc">Defining routes and working with the database using Eloquent ORM.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://laravel.com/docs/routing" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://bootcamp.laravel.com/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://laravel.com/docs/eloquent" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 10. Security -->
+  <section class="topic-section" id="security" data-section-name="Security">
+    <div class="section-head"><span class="section-num">10</span><h2>Security</h2></div>
+    <p class="section-desc">Protecting the apps you build and the users who use them.</p>
+    <div class="card-grid">
+      <article class="card" data-id="owasp-top-10" data-keywords="security owasp vulnerabilities xss sql injection">
+        <div class="card-top"><h3>Web Security Basics</h3><button class="check" aria-label="Mark Web Security Basics complete"></button></div>
+        <p class="card-desc">Common vulnerabilities like XSS and SQL injection, and how to avoid them.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://cheatsheetseries.owasp.org/" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+      <article class="card" data-id="auth-https" data-keywords="authentication https authorization tokens">
+        <div class="card-top"><h3>Auth &amp; HTTPS</h3><button class="check" aria-label="Mark Auth and HTTPS complete"></button></div>
+        <p class="card-desc">Authentication, authorization and why every site should use HTTPS.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://developer.mozilla.org/en-US/docs/Web/Security" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 11. Projects -->
+  <section class="topic-section" id="projects" data-section-name="Projects">
+    <div class="section-head"><span class="section-num">11</span><h2>Projects</h2></div>
+    <p class="section-desc">Apply what you've learned. Build these roughly in order.</p>
+    <div class="card-grid">
+      <article class="card" data-id="proj-beginner" data-keywords="projects beginner to-do list landing page">
+        <div class="card-top"><h3>Beginner projects</h3><button class="check" aria-label="Mark Beginner projects complete"></button></div>
+        <p class="card-desc">To-do list, landing page, calculator, quiz app — using just HTML, CSS and JS.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://www.freecodecamp.org/news/tag/projects/" target="_blank" rel="noopener">Ideas</a>
+          <a class="btn" href="https://github.com/practical-tutorials/project-based-learning" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://github.com/topics/project-based-learning" target="_blank" rel="noopener">More Resources</a>
+        </div>
+      </article>
+      <article class="card" data-id="proj-fullstack" data-keywords="projects fullstack crud app database">
+        <div class="card-top"><h3>Full-stack project</h3><button class="check" aria-label="Mark Full-stack project complete"></button></div>
+        <p class="card-desc">A CRUD app with a database and backend — e.g. a blog, notes app or bookmarks manager.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://roadmap.sh/projects" target="_blank" rel="noopener">Ideas</a>
+          <a class="btn" href="https://github.com/practical-tutorials/project-based-learning" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://github.com/topics/full-stack" target="_blank" rel="noopener">More Resources</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 12. Portfolio -->
+  <section class="topic-section" id="portfolio" data-section-name="Portfolio">
+    <div class="section-head"><span class="section-num">12</span><h2>Portfolio</h2></div>
+    <p class="section-desc">Show your work so employers and clients can find it.</p>
+    <div class="card-grid">
+      <article class="card" data-id="portfolio-site" data-keywords="portfolio website github pages deploy">
+        <div class="card-top"><h3>Build &amp; deploy your site</h3><button class="check" aria-label="Mark portfolio site complete"></button></div>
+        <p class="card-desc">A simple site listing your projects, skills and contact details, hosted for free.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://web.dev/learn" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://github.com/topics/portfolio-template" target="_blank" rel="noopener">Templates</a>
+          <a class="btn" href="https://docs.github.com/en/pages" target="_blank" rel="noopener">Deploy (GitHub Pages)</a>
+        </div>
+      </article>
+      <article class="card" data-id="portfolio-profile" data-keywords="github profile readme resume linkedin">
+        <div class="card-top"><h3>GitHub profile &amp; resume</h3><button class="check" aria-label="Mark GitHub profile and resume complete"></button></div>
+        <p class="card-desc">A clean GitHub profile README and a resume that highlights your projects.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://github.com/topics/github-profile-readme" target="_blank" rel="noopener">Examples</a>
+          <a class="btn" href="https://docs.github.com/" target="_blank" rel="noopener">Official Docs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 13. Interview Prep -->
+  <section class="topic-section" id="interview" data-section-name="Interview Prep">
+    <div class="section-head"><span class="section-num">13</span><h2>Interview Preparation</h2></div>
+    <p class="section-desc">Get ready for technical and behavioral interviews.</p>
+    <div class="card-grid">
+      <article class="card" data-id="interview-dsa" data-keywords="interview dsa data structures algorithms coding">
+        <div class="card-top"><h3>Data structures &amp; algorithms</h3><button class="check" aria-label="Mark data structures and algorithms complete"></button></div>
+        <p class="card-desc">Arrays, strings, common patterns and time complexity basics.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://roadmap.sh/datastructures-and-algorithms" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://leetcode.com/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://developer.mozilla.org/en-US/docs/Glossary/Algorithm" target="_blank" rel="noopener">Reference</a>
+        </div>
+      </article>
+      <article class="card" data-id="interview-system" data-keywords="interview system design behavioral mock">
+        <div class="card-top"><h3>System design &amp; behavioral</h3><button class="check" aria-label="Mark system design and behavioral complete"></button></div>
+        <p class="card-desc">Explaining trade-offs clearly, and answering behavioral questions with real examples.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="https://roadmap.sh/system-design" target="_blank" rel="noopener">Learn</a>
+          <a class="btn" href="https://www.freecodecamp.org/news/tag/interview-prep/" target="_blank" rel="noopener">Practice</a>
+          <a class="btn" href="https://roadmap.sh/" target="_blank" rel="noopener">More Resources</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Checklist summary -->
+  <section class="topic-section" id="checklist">
+    <div class="checklist-summary">
+      <h2>Final checklist</h2>
+      <p>A live summary of everything above. Keep going until every group is complete.</p>
+      <div class="big-progress">
+        <div class="big-num" id="bigPercent">0%</div>
+        <div class="big-track"><div class="big-fill" id="bigFill"></div></div>
+      </div>
+      <div class="group-list" id="groupList"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Built with <strong>Code With Laxmi</strong> — a free roadmap for beginner developers.<br>
+    Your checkmarks are stored only in this browser (no data is sent anywhere).
+  </div>
+</footer>
+
+<script>
+(function(){
+  var STORAGE_KEY = 'cwl-roadmap-progress-v1';
+  var state = {};
+
+  function loadState(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      state = raw ? JSON.parse(raw) : {};
+    }catch(e){ state = {}; }
+  }
+  function saveState(){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){}
+  }
+
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-id]'));
+
+  function applyCardState(card){
+    var id = card.getAttribute('data-id');
+    var checkBtn = card.querySelector('.check');
+    var isDone = !!state[id];
+    card.classList.toggle('done', isDone);
+    checkBtn.classList.toggle('checked', isDone);
+    checkBtn.innerHTML = isDone ? '&#10003;' : '';
+    checkBtn.setAttribute('aria-pressed', isDone ? 'true' : 'false');
+  }
+
+  function updateProgress(){
+    var total = cards.length;
+    var done = cards.filter(function(c){ return !!state[c.getAttribute('data-id')]; }).length;
+    var pct = total ? Math.round((done/total)*100) : 0;
+
+    document.getElementById('topPercent').textContent = pct + '%';
+    document.getElementById('topFill').style.width = pct + '%';
+    document.getElementById('bigPercent').textContent = pct + '%';
+    document.getElementById('bigFill').style.width = pct + '%';
+
+    var groups = {};
+    var order = [];
+    cards.forEach(function(c){
+      var section = c.closest('.topic-section');
+      var name = section.getAttribute('data-section-name');
+      if(!groups[name]){ groups[name] = {done:0, total:0}; order.push(name); }
+      groups[name].total++;
+      if(state[c.getAttribute('data-id')]) groups[name].done++;
+    });
+    var list = document.getElementById('groupList');
+    list.innerHTML = '';
+    order.forEach(function(name){
+      var g = groups[name];
+      var row = document.createElement('div');
+      row.className = 'group-row';
+      row.innerHTML = '<span>' + name + '</span><b>' + g.done + ' / ' + g.total + '</b>';
+      list.appendChild(row);
+    });
+  }
+
+  cards.forEach(function(card){
+    applyCardState(card);
+    var checkBtn = card.querySelector('.check');
+    checkBtn.addEventListener('click', function(){
+      var id = card.getAttribute('data-id');
+      state[id] = !state[id];
+      applyCardState(card);
+      saveState();
+      updateProgress();
+    });
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    if(confirm('Reset all progress on this device?')){
+      state = {};
+      cards.forEach(applyCardState);
+      saveState();
+      updateProgress();
+    }
+  });
+
+  loadState();
+  cards.forEach(applyCardState);
+  updateProgress();
+
+  // ---- Search / filter ----
+  var searchInput = document.getElementById('searchInput');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.topic-section[data-section-name]'));
+  var noResults = document.getElementById('noResults');
+
+  searchInput.addEventListener('input', function(){
+    var q = searchInput.value.trim().toLowerCase();
+    var anyVisible = false;
+
+    sections.forEach(function(section){
+      var sectionCards = Array.prototype.slice.call(section.querySelectorAll('.card[data-id]'));
+      var visibleInSection = 0;
+      sectionCards.forEach(function(card){
+        var text = (card.querySelector('h3').textContent + ' ' +
+                    card.querySelector('.card-desc').textContent + ' ' +
+                    (card.getAttribute('data-keywords')||'') + ' ' +
+                    section.getAttribute('data-section-name')).toLowerCase();
+        var match = q === '' || text.indexOf(q) !== -1;
+        card.style.display = match ? '' : 'none';
+        if(match) visibleInSection++;
+      });
+      var show = q === '' || visibleInSection > 0;
+      section.style.display = show ? '' : 'none';
+      if(show) anyVisible = true;
+    });
+
+    noResults.style.display = (q !== '' && !anyVisible) ? 'block' : 'none';
+  });
+
+  // ---- Active section highlight in subnav ----
+  var subnavLinks = Array.prototype.slice.call(document.querySelectorAll('#subnavInner a'));
+  var observedSections = sections;
+
+  function setActiveLink(id){
+    subnavLinks.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+    });
+  }
+
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          setActiveLink(entry.target.id);
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    observedSections.forEach(function(s){ io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
