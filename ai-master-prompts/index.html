@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Master Prompts — Better prompts. Better results.</title>
+<meta name="description" content="Free, ready-to-use Master Prompts that turn rough ideas into structured, high-quality prompts for ChatGPT, Gemini and Claude.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <nav class="nav" aria-label="Primary">
+    <a class="nav-brand" href="#top">AI Master Prompts</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#chatgpt">ChatGPT</a></li>
+      <li><a href="#gemini">Gemini</a></li>
+      <li><a href="#claude">Claude</a></li>
+      <li><a href="#how-to-use">How to Use</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge">100% free</span>
+      <h1>AI Master Prompts</h1>
+      <p class="hero-sub">Better prompts. Better results.</p>
+      <p class="hero-body">Ready-to-use Master Prompts for ChatGPT, Gemini and Claude — paste one into your AI tool once, and it will turn every rough idea you type afterward into a clear, structured, high‑quality prompt.</p>
+
+      <div class="platform-cards">
+        <article class="platform-card" data-accent="chatgpt">
+          <h2>ChatGPT</h2>
+          <p>A prompt-optimization system tuned to how ChatGPT follows structure, role and format instructions.</p>
+          <div class="card-actions">
+            <a href="#chatgpt" class="btn btn-ghost">View prompt</a>
+            <button class="btn btn-solid" data-pdf="chatgpt">Download PDF</button>
+          </div>
+        </article>
+        <article class="platform-card" data-accent="gemini">
+          <h2>Gemini</h2>
+          <p>Built around Gemini's strengths — long context, multimodal detail and Google-workflow awareness.</p>
+          <div class="card-actions">
+            <a href="#gemini" class="btn btn-ghost">View prompt</a>
+            <button class="btn btn-solid" data-pdf="gemini">Download PDF</button>
+          </div>
+        </article>
+        <article class="platform-card" data-accent="claude">
+          <h2>Claude</h2>
+          <p>Written for Claude's preference for explicit structure, XML-style tags and stated constraints.</p>
+          <div class="card-actions">
+            <a href="#claude" class="btn btn-ghost">View prompt</a>
+            <button class="btn btn-solid" data-pdf="claude">Download PDF</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section class="section" id="whats-inside">
+    <div class="wrap">
+      <h2 class="section-title">What's inside</h2>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <h3>ChatGPT Master Prompt</h3>
+          <p>A complete system prompt — Lyra — that diagnoses your rough request and rebuilds it with role, context, constraints and output format, tuned for ChatGPT.</p>
+        </div>
+        <div class="overview-card">
+          <h3>Gemini Master Prompt</h3>
+          <p>The same discipline, rebuilt for Gemini's optimization patterns and Google-ecosystem tasks.</p>
+        </div>
+        <div class="overview-card">
+          <h3>Claude Master Prompt</h3>
+          <p>A version written in Claude's own idiom, with XML-tag structuring and explicit quality checks.</p>
+        </div>
+        <div class="overview-card">
+          <h3>How to Use the Master Prompts</h3>
+          <p>A short, beginner-friendly PDF walking through setup, workflow and best practices for all three.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="section search-section">
+    <div class="wrap">
+      <label for="promptSearch" class="search-label">Search inside the prompts</label>
+      <div class="search-box">
+        <input type="search" id="promptSearch" placeholder="Try “output format”, “welcome message”, “DETAIL MODE” …" autocomplete="off">
+        <button class="btn btn-ghost" id="searchClear" type="button">Clear</button>
+      </div>
+      <p class="search-hint" id="searchHint" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- CHATGPT PROMPT -->
+  <section class="section prompt-section" id="chatgpt" data-accent="chatgpt">
+    <div class="wrap">
+      <div class="prompt-head">
+        <h2>ChatGPT Master Prompt</h2>
+        <div class="prompt-actions">
+          <button class="btn btn-solid" data-copy="chatgpt">Copy prompt</button>
+          <button class="btn btn-outline" data-pdf="chatgpt">Download PDF</button>
+          <button class="btn btn-text" data-toggle="chatgpt">Collapse</button>
+        </div>
+      </div>
+      <pre class="prompt-viewer" id="view-chatgpt" tabindex="0"></pre>
+    </div>
+  </section>
+
+  <!-- GEMINI PROMPT -->
+  <section class="section prompt-section" id="gemini" data-accent="gemini">
+    <div class="wrap">
+      <div class="prompt-head">
+        <h2>Gemini Master Prompt</h2>
+        <div class="prompt-actions">
+          <button class="btn btn-solid" data-copy="gemini">Copy prompt</button>
+          <button class="btn btn-outline" data-pdf="gemini">Download PDF</button>
+          <button class="btn btn-text" data-toggle="gemini">Collapse</button>
+        </div>
+      </div>
+      <pre class="prompt-viewer" id="view-gemini" tabindex="0"></pre>
+    </div>
+  </section>
+
+  <!-- CLAUDE PROMPT -->
+  <section class="section prompt-section" id="claude" data-accent="claude">
+    <div class="wrap">
+      <div class="prompt-head">
+        <h2>Claude Master Prompt</h2>
+        <div class="prompt-actions">
+          <button class="btn btn-solid" data-copy="claude">Copy prompt</button>
+          <button class="btn btn-outline" data-pdf="claude">Download PDF</button>
+          <button class="btn btn-text" data-toggle="claude">Collapse</button>
+        </div>
+      </div>
+      <pre class="prompt-viewer" id="view-claude" tabindex="0"></pre>
+    </div>
+  </section>
+
+  <!-- HOW TO USE -->
+  <section class="section how-to" id="how-to-use">
+    <div class="wrap">
+      <h2 class="section-title">How to use the Master Prompts</h2>
+      <ol class="steps">
+        <li><strong>Choose your platform.</strong> Pick ChatGPT, Gemini or Claude — whichever you use most.</li>
+        <li><strong>Open its Master Prompt</strong> above and read it once, so you know what it does.</li>
+        <li><strong>Copy the complete prompt</strong> with the Copy button.</li>
+        <li><strong>Add it to your AI tool</strong> as a saved system/custom instruction, project instruction, or the first message of a dedicated chat — whatever your platform supports.</li>
+        <li><strong>Save that setup</strong> so you can reuse it any time you need a new prompt.</li>
+        <li><strong>Describe what you want,</strong> e.g. “Create a prompt for ChatGPT to help me debug my Laravel project.”</li>
+        <li><strong>Let the Master Prompt rebuild it</strong> into a structured, ready-to-use prompt.</li>
+        <li><strong>Copy that optimized prompt,</strong> open a new chat in your target AI tool, and use it for the real task.</li>
+      </ol>
+
+      <div class="workflow">
+        <span>Your idea</span><span class="arrow">→</span>
+        <span>Master Prompt</span><span class="arrow">→</span>
+        <span>Optimized prompt</span><span class="arrow">→</span>
+        <span>AI tool</span><span class="arrow">→</span>
+        <span>Better result</span>
+      </div>
+
+      <h3>Best practices</h3>
+      <ul class="best-practices">
+        <li>Give enough context for the task at hand.</li>
+        <li>State your goal clearly.</li>
+        <li>Include real errors or examples when relevant.</li>
+        <li>Mention your technology or framework.</li>
+        <li>Say what output format you want.</li>
+        <li>Review every AI-generated answer.</li>
+        <li>Never share passwords, API keys, credentials or confidential information.</li>
+      </ul>
+
+      <button class="btn btn-outline" data-pdf="howto">Download “How to Use” PDF</button>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD ALL -->
+  <section class="section download-all">
+    <div class="wrap">
+      <h2 class="section-title">Get the complete collection</h2>
+      <p>Four PDFs, one click each — or grab all of them at once.</p>
+      <div class="download-grid">
+        <button class="btn btn-outline" data-pdf="chatgpt">ChatGPT PDF</button>
+        <button class="btn btn-outline" data-pdf="gemini">Gemini PDF</button>
+        <button class="btn btn-outline" data-pdf="claude">Claude PDF</button>
+        <button class="btn btn-outline" data-pdf="howto">How-to-Use PDF</button>
+      </div>
+      <button class="btn btn-solid btn-large" id="downloadAll">Download all PDFs</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-brand">AI Master Prompts</p>
+    <p>ChatGPT • Gemini • Claude</p>
+    <p>Free developer resource</p>
+    <p class="footer-note">Created for developers, creators, students and professionals.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/prompts-data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
