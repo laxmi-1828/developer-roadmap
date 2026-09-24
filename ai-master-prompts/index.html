@@ -1,3 +1,121 @@
+i need changes only one index.html 
+css link  but need 
+index.html
+style.css
+script.js
+kya  ye sahi nhi hai maine github me  jaker index.html me  yaha change kr deya but ui abhi bhi acha nhi dikh raha
+working 
+
+ download pdf and view prompt pr abhi kuch action nhi ho raha to kya o 3 master prompt ko upolad krna hoga uska link lgana hoga 
+
+Haan 👍 Main 3 separate PDF files bana sakti hoon, but mujhe un 3 master prompts ka actual full content chahiye.
+
+Abhi mere paas aapke current website ke ChatGPT / Gemini / Claude cards ka description hai, lekin complete prompt text available nahi hai. Main prompt content guess karke PDF nahi banana chahti.
+
+Aap mujhe ye bhej do:
+
+Either:
+
+prompts-data.js upload kar do — sabse easy ✅
+OR
+ChatGPT, Gemini aur Claude ke 3 master prompts yahan paste kar do.
+
+Phir main bana dungi:
+
+ChatGPT-Master-Prompt.pdf
+Gemini-Master-Prompt.pdf
+Claude-Master-Prompt.pdf
+
+Aur PDFs ko professional, clean, readable format mein banaungi, so that you can put them directly inside:
+
+ai-master-prompts/
+└── pdf/
+    ├── ChatGPT-Master-Prompt.pdf
+    ├── Gemini-Master-Prompt.pdf
+    └── Claude-Master-Prompt.pdf
+
+Uske baad main aapko exact Claude prompt bhi dungi jisse View Prompt aur Download PDF buttons working ho jayenge.
+
+Bas prompts-data.js upload kar do.
+
+Pasted code.js
+JavaScript
+
+Done ✅ I converted the exact ChatGPT, Gemini, and Claude master prompts from your uploaded prompts-data.js into 3 separate PDFs.
+
+📥 Download
+Download ChatGPT Master Prompt PDF
+Download Gemini Master Prompt PDF
+Download Claude Master Prompt PDF
+Next step
+
+Ab in 3 PDFs ko aapke GitHub project ke andar:
+
+ai-master-prompts/
+├── index.html
+├── style.css
+├── script.js
+├── prompts-data.js
+└── pdf/
+    ├── ChatGPT-Master-Prompt.pdf
+    ├── Gemini-Master-Prompt.pdf
+    └── Claude-Master-Prompt.pdf
+
+rakhna hai.
+
+Uske baad View Prompt ko popup se aur Download PDF ko in PDFs se connect kar denge. 
+
+ChatGPT-Master-Prompt.pdf
+PDF
+Gemini-Master-Prompt.pdf
+PDF
+Claude-Master-Prompt.pdf
+PDF
+Pasted code.html
+File
+ give correct index.html
+
+Haan, aapke current index.html mein paths galat the. Aapke folder structure ke according ye hona chahiye:
+
+ai-master-prompts/
+├── index.html
+├── style.css
+├── script.js
+├── prompts-data.js
+└── pdf/
+    ├── ChatGPT-Master-Prompt.pdf
+    ├── Gemini-Master-Prompt.pdf
+    └── Claude-Master-Prompt.pdf
+
+Aapke uploaded HTML mein abhi css/style.css, js/prompts-data.js, aur js/script.js likha tha.
+
+✅ Corrected index.html
+
+Download corrected index.html
+
+Is corrected file mein:
+
+<link rel="stylesheet" href="style.css">
+
+aur:
+
+<script src="prompts-data.js"></script>
+<script src="script.js"></script>
+
+hain.
+
+⚠️ Ek aur important issue
+
+Aapke current HTML mein PDF buttons data-pdf="chatgpt" etc. use kar rahe hain, lekin PDF path/functionality script.js decide karega.
+
+Isliye sirf index.html replace karne ke baad bhi Download PDF work na kare, to next humein script.js fix karna hoga so that it points to:
+
+pdf/ChatGPT-Master-Prompt.pdf
+pdf/Gemini-Master-Prompt.pdf
+pdf/Claude-Master-Prompt.pdf
+
+Abhi index.html replace karo. Uske baad mujhe script.js upload/send karo — main usko bhi correct kar dungi. 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -221,3 +339,5 @@
 <script src="script.js"></script>
 </body>
 </html>
+ai-master-prompts-corrected-index.html
+HTML
